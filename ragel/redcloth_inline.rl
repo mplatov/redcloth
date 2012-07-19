@@ -60,8 +60,8 @@
   sup_phrase = ( "^" when starts_phrase) >X ( mtext ) >A %T :>> ( "^" end_markup_phrase ) ;
   sub = "[~" >X mtext >A %T :> "~]" ;
   sub_phrase = ( "~" when starts_phrase) >X ( mtext ) >A %T :>> ( "~" end_markup_phrase ) ;
-  span = "[%" >X mtext >A %T :> "%]" ;
-  span_phrase = (("%" when starts_phrase) >X ( mtext ) >A %T :>> ( "%" end_markup_phrase )) ;
+#  span = "[%" >X mtext >A %T :> "%]" ;
+#  span_phrase = (("%" when starts_phrase) >X ( mtext ) >A %T :>> ( "%" end_markup_phrase )) ;
   cite = "["? "??" >X mtext >A >ATTR :>> ("?" @T ( "?" | "?" @{ STORE_ATTR("text"); } "?" %SET_ATTR ))  "]"? ;
   ignore = "["? "==" >X %A mtext %T :> "==" "]"? ;
   snip = "["? "```" >X %A mtext %T :> "```" "]"? ;
@@ -126,8 +126,6 @@
     sup_phrase { PARSE_ATTR("text"); PASS(block, "text", "sup_phrase"); };
     sub { PARSE_ATTR("text"); PASS(block, "text", "sub"); };
     sub_phrase { PARSE_ATTR("text"); PASS(block, "text", "sub_phrase"); };
-    span { PARSE_ATTR("text"); PASS(block, "text", "span"); };
-    span_phrase { PARSE_ATTR("text"); PASS(block, "text", "span_phrase"); };
     cite { PARSE_ATTR("text"); PASS(block, "text", "cite"); };
     ignore => ignore;
     snip { PASS(block, "text", "snip"); };

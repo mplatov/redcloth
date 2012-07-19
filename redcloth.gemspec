@@ -4,7 +4,7 @@ $LOAD_PATH.unshift File.join(redcloth_dir, 'lib')
 require "redcloth/version"
 
 Gem::Specification.new do |s|
-  s.name        = "RedCloth"
+  s.name        = "gv-RedCloth"
   s.version     = RedCloth::VERSION.to_s
   s.authors     = ["Jason Garber", "why the lucky stiff", "Ola Bini"]
   s.description = "Textile parser for Ruby."
@@ -38,8 +38,8 @@ Gem::Specification.new do |s|
     s.extensions = Dir['ext/**/extconf.rb']
   end
 
-  s.add_development_dependency('bundler', '~> 1.0.10')
-  s.add_development_dependency('rake', '~> 0.8.7')
+  s.add_development_dependency('bundler', '~> 1.1.1')
+  s.add_development_dependency('rake', '~> 0.9.2.2')
   s.add_development_dependency('rspec', '~> 2.4')
   s.add_development_dependency('diff-lcs', '~> 1.1.2')
   

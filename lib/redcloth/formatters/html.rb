@@ -319,7 +319,7 @@ private
     text.gsub!( /<(\/*)([A-Za-z]\w*)([^>]*?)(\s?\/?)>/ ) do |m|
       raw = $~
       tag = raw[2].downcase
-      if allowed_tags.has_key? tag
+      if allowed_tags.has_key? tag and allowed_tags[tag]
         pcs = [tag]
         allowed_tags[tag].each do |prop|
           ['"', "'", ''].each do |q|
@@ -331,7 +331,7 @@ private
               break
             end
           end
-        end if allowed_tags[tag]
+        end
         "<#{raw[1]}#{pcs.join " "}#{raw[4]}>"
       else # Unauthorized tag
         if block_given?

@@ -32,8 +32,8 @@ Gem::Specification.new do |s|
   s.files += ["ext/redcloth_scan/redcloth.h"]
   s.extensions = Dir['ext/**/extconf.rb']
 
-  s.add_development_dependency('bundler', '~> 1.1.1')
-  s.add_development_dependency('rake', '~> 0.9.2.2')
+  # s.add_development_dependency('bundler', '> 1.3.4')
+  # s.add_development_dependency('rake', '~> 10.0.3')
   s.add_development_dependency('rspec', '~> 2.4')
   s.add_development_dependency('diff-lcs', '~> 1.1.2')
   
@@ -41,6 +41,6 @@ Gem::Specification.new do |s|
   # gem packaging. Otherwise, Bundler complains that they're
   # not installed even though they're not required.
   # See https://github.com/carlhuda/bundler/issues/issue/1021
-  s.add_development_dependency('rvm', '~> 1.2.6')
-  s.add_development_dependency('rake-compiler', '~> 0.7.1')
+  # s.add_development_dependency('rvm', '~> 1.2.6')
+  # s.add_development_dependency('rake-compiler', '~> 0.7.1')
 end
